@@ -1,0 +1,6 @@
+set1 = set(map(int, input().split()))
+set2 = set(map(int, input().split()))
+print ('Уникальные элементы первого списка: ', set1 - set2)
+print('Уникальные элементы второго списка: ', set2 - set1)
+print('Уникальные элементы для объединения списков: ', set1 ^ set2)
+print('Общие элементы', set1 & set2)
