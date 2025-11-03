@@ -1,4 +1,4 @@
-def yard (exp):
+def yard(exp):
     e = exp.replace(' ', '')
     t = []
     i = 0
@@ -12,6 +12,7 @@ def yard (exp):
                 n += e[i]
                 i += 1
             t.append(n)
+
     def p(op):
         if op in ['+', '-']:
             return 1

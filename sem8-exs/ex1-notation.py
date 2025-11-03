@@ -13,7 +13,6 @@ def calc(e):
                 i += 1
             t.append(n)
 
-
     def p(op):
         if op in ['+', '-']:
             return 1
@@ -40,7 +39,6 @@ def calc(e):
         out.append(s.pop())
     print("Обратная польская запись:", ' '.join(out))
 
-
     def tp(tokens):
         if not tokens:
             return []
@@ -60,13 +58,13 @@ def calc(e):
                     si = j
         if si != -1:
             op = tokens[si]
-            l = tokens[:si]
+            le = tokens[:si]
             r = tokens[si + 1:]
-            if len(l) > 1 and l[0] == '(' and l[-1] == ')':
-                l = l[1:-1]
+            if len(le) > 1 and le[0] == '(' and le[-1] == ')':
+                le = le[1:-1]
             if len(r) > 1 and r[0] == '(' and r[-1] == ')':
                 r = r[1:-1]
-            return [op] + tp(l) + tp(r)
+            return [op] + tp(le) + tp(r)
         else:
             if len(tokens) > 1 and tokens[0] == '(' and tokens[-1] == ')':
                 return tp(tokens[1:-1])
@@ -77,5 +75,4 @@ def calc(e):
 
 expr = input()
 calc(expr)
-
-#Особая благодарность ИИ-модели Deepseek за помощь
+# Особая благодарность ИИ-модели Deepseek за помощь
