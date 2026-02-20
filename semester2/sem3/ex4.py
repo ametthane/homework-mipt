@@ -6,7 +6,6 @@ enn = inp1[3]
 ntoi = {}
 ns = []
 gr = [[] for _ in range(vv)]
-
 for _ in range(ee):
     eg = input().split()
     un = eg[0]
