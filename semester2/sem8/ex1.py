@@ -1,20 +1,16 @@
-s = input()
-ns = []
-sc = []
-i = 0
-while i < len(s):
-    if s[i:i+8] == "student_":
-        num = s[i+8:i+11]
-        i += 11
-        j = i
-        while j < len(s) and s[j].isdigit():
-            j += 1
-        score = int(s[i:j])
-        ns.append(num)
-        sc.append(score)
-        i = j
-    else:
-        i += 1
-m = max(sc)
-res = [ns[k] for k in range(len(ns)) if sc[k] == m]
+stud = input().split("student_")
+stud.remove("")
+students = []
+for i in stud:
+    num = i[:3]
+    score = int(i[3:])
+    students.append((num, score))
+max_sc = -1
+for num, score in students:
+    if score > max_sc:
+        max_sc = score
+res = []
+for num, score in students:
+    if score == max_sc:
+        res.append(num)
 print('-'.join(res))
